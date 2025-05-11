@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image'; // Assuming Next.js is used for Image component
-import Link from 'next/link';   // Assuming Next.js Link for internal navigation or general links
+import React from "react";
+import Image from "next/image"; // Assuming Next.js is used for Image component
+import Link from "next/link"; // Assuming Next.js Link for internal navigation or general links
 
 // SVG for the checkmark icon
 const CheckmarkIcon = () => (
@@ -35,14 +35,16 @@ const RightArrowIcon = () => (
 );
 
 // SVG for star rating
-const StarIcon = ({ filled = false, className = '' }) => (
+const StarIcon = ({ filled = false, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill={filled ? "currentColor" : "none"}
     stroke="currentColor"
     strokeWidth="1.5"
-    className={`w-4 h-4 ${filled ? 'text-yellow-400' : 'text-gray-300'} ${className}`}
+    className={`w-4 h-4 ${
+      filled ? "text-yellow-400" : "text-gray-300"
+    } ${className}`}
   >
     <path
       fillRule="evenodd"
@@ -52,44 +54,53 @@ const StarIcon = ({ filled = false, className = '' }) => (
   </svg>
 );
 
-const PaymentInfo  = () => {
+const PaymentInfo = () => {
   return (
     <section className="container mx-auto px-4 py-16 md:py-24">
       {/* Main Heading */}
       <div className="flex  items-center justify-center text-center mb-12 md:mb-16">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-          Grow Organic Traffic <br /> on <span className="text-purple-600">Auto-Pilot</span>
+          Grow Organic Traffic <br /> on{" "}
+          <span className="text-purple-600">Auto-Pilot</span>
         </h1>
         {/* Avatar Group with Rating */}
         <div className="flex flex-col items-center ml-20 mt-6">
-            <p className='text-gray-700'>
-            Outrank creates SEO-optimized articles that drive <br></br>traffic while you focus on growing your business.
-            </p>
+          <p className="text-gray-700">
+            Powerblog creates SEO-optimized articles that drive <br></br>traffic
+            while you focus on growing your business.
+          </p>
           <div className="flex -space-x-2 overflow-hidden mt-3 mr-3">
             {/* Replace with actual avatar URLs */}
             <Image
-              src="/placeholders/avatar-1.jpg"
+              src="https://www.outrank.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.f34d230f.webp&w=48&q=75"
               alt="Avatar 1"
               width={32}
               height={32}
               className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
             />
             <Image
-              src="/placeholders/avatar-2.jpg"
+              src="https://www.outrank.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-2.0683e51c.webp&w=48&q=75"
               alt="Avatar 2"
               width={32}
               height={32}
               className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
             />
             <Image
-              src="/placeholders/avatar-3.jpg"
+              src="https://www.outrank.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-4.f6afbc67.webp&w=48&q=75"
+              alt="Avatar 3"
+              width={32}
+              height={32}
+              className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+            />
+            <Image
+              src="https://www.outrank.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.ee2ff4ed.webp&w=48&q=75"
               alt="Avatar 3"
               width={32}
               height={32}
               className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
             />
           </div>
-          
+
           <div className="flex items-center mr-2">
             {[...Array(5)].map((_, i) => (
               <StarIcon key={i} filled={true} />
@@ -105,7 +116,9 @@ const PaymentInfo  = () => {
           {/* Left Section: Pricing */}
           <div className="w-full lg:w-1/3 flex flex-col justify-between items-center lg:items-start text-center lg:text-left mb-8 lg:mb-0">
             <div className="mb-8 lg:mb-0">
-              <p className="text-3xl font-bold text-gray-800 mb-2">All in One</p>
+              <p className="text-3xl font-bold text-gray-800 mb-2">
+                All in One
+              </p>
               <span className="inline-block bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full">
                 For ambitious entrepreneurs
               </span>
@@ -135,7 +148,9 @@ const PaymentInfo  = () => {
 
           {/* Right Section: Features List */}
           <div className="w-full lg:w-2/3 lg:pl-16 lg:border-l lg:border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-800 mb-8">What's included:</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-8">
+              What's included:
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
               {/* Feature 1 */}
               <div className="flex items-start">
@@ -162,7 +177,7 @@ const PaymentInfo  = () => {
               <div className="flex items-start">
                 <CheckmarkIcon />
                 <p className="ml-3 text-gray-700 text-lg">
-                  Integrates with WordPress, Webflow, Shopify and many{' '}
+                  Integrates with WordPress, Webflow, Shopify and many{" "}
                   <Link href="#" className="text-purple-600 hover:underline">
                     other platforms
                   </Link>
@@ -213,9 +228,7 @@ const PaymentInfo  = () => {
               {/* Feature 11 */}
               <div className="flex items-start">
                 <CheckmarkIcon />
-                <p className="ml-3 text-gray-700 text-lg">
-                  Priority Support
-                </p>
+                <p className="ml-3 text-gray-700 text-lg">Priority Support</p>
               </div>
             </div>
           </div>

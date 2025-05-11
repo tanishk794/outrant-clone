@@ -10,9 +10,12 @@ import BestWork from "@/components/BestWork";
 import GeneratedContent from "@/components/GeneratedContent";
 import TestimonialSection from "@/components/Tesimonial";
 import PaymentInfo from "@/components/PaymentInfo";
+import FAQsection from "@/components/FAQsection";
+import FreeTrialCTA from "@/components/FreeTrialCTA";
 export default function Home() {
   return (
     <div className="w-full h-full ">
+ 
       <Hero />
       <VideoSection />
       <HowItWorksSection />
@@ -23,6 +26,8 @@ export default function Home() {
       <GeneratedContent />
       <TestimonialSection/>
       <PaymentInfo/>
+      <FAQsection/>
+      <FreeTrialCTA/>
     </div>
   );
 }

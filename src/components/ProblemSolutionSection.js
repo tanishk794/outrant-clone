@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Reusing the OutrankIcon from the header component
 const OutrankIcon = () => (
@@ -17,27 +18,16 @@ const OutrankIcon = () => (
   </svg>
 );
 
-// Placeholder Icons
-const AvatarIcon = ({ color = "bg-gray-300" }) => (
-  <div
-    className={`w-10 h-10 ${color} rounded-full flex items-center justify-center text-white text-base font-bold shrink-0`}
-  >
-    {" "}
-    {/* Increased size and added shrink-0 */}
-    {/* Replace with an actual avatar image or icon */}
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      className="w-6 h-6 text-white"
-    >
-      <path
-        fillRule="evenodd"
-        d="M9.293 2.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L14.586 11H3a1 1 0 1 1 0-2h11.586L9.293 3.707a1 1 0 0 1 0-1.414Z"
-        clipRule="evenodd"
-      />
-    </svg>{" "}
-    {/* Using a generic user icon placeholder */}
+// Replace AvatarIcon with Image component
+const AvatarIcon = ({ src }) => (
+  <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 overflow-hidden">
+    <Image
+      src={src}
+      alt="Avatar"
+      width={40}
+      height={40}
+      className="w-full h-full object-cover"
+    />
   </div>
 );
 
@@ -80,11 +70,11 @@ const   ProblemSolutionSection = () => {
     <section className="container mt-12 mx-auto px-20 pt-8">
       {/* Headings and Arrows */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
           Your problem
         </h2>
         <div className="flex items-center justify-center space-x-8 md:space-x-16 mb-8">
-          <h3 className="text-4xl md:text-5xl font-bold text-gray-800">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-800">
             Our solution
           </h3>
         </div>
@@ -100,7 +90,7 @@ const   ProblemSolutionSection = () => {
           <div className="flex items-start space-x-4">
             {" "}
             {/* Wrapper div for avatar and card */}
-            <AvatarIcon color="bg-purple-500" />
+            <AvatarIcon src="https://www.outrank.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-1.f34d230f.webp&w=48&q=75" />
             <div className="flex-1 bg-white py-8 px-6 rounded-lg shadow-md border border-gray-100">
               {" "}
               {/* The card div */}
@@ -129,7 +119,7 @@ const   ProblemSolutionSection = () => {
           <div className="flex items-start space-x-4">
             {" "}
             {/* Wrapper div for avatar and card */}
-            <AvatarIcon color="bg-teal-500" />
+            <AvatarIcon src="https://www.outrank.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-2.0683e51c.webp&w=48&q=75" />
             <div className="flex-1 bg-white py-8 px-6 rounded-lg shadow-md border border-gray-100">
               {" "}
               {/* The card div */}
@@ -154,7 +144,7 @@ const   ProblemSolutionSection = () => {
           <div className="flex items-start space-x-4">
             {" "}
             {/* Wrapper div for avatar and card */}
-            <AvatarIcon color="bg-yellow-500" />
+            <AvatarIcon src="https://www.outrank.so/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar-3.ee2ff4ed.webp&w=48&q=75" />
             <div className="flex-1 bg-white py-8 px-6 rounded-lg shadow-md border border-gray-100">
               {" "}
               {/* The card div */}
@@ -172,8 +162,8 @@ const   ProblemSolutionSection = () => {
         <div className="flex-1">
           <div className="bg-gradient-to-br from-purple-400 to-purple-700 text-white p-8 rounded-lg shadow-lg h-full flex flex-col">
             {/* Solution Card Header */}
-            <div className="flex items-center mb-6">
-              <OutrankIcon />
+            <div className="flex  items-center mb-6">
+             
               <span className="text-4xl font-semibold">PowerBlog</span>
             </div>
 

@@ -41,13 +41,9 @@ const AiContentSection = () => {
       {/* Heading and Decorative Text */}
       <div className="text-center md:text-left mb-12 md:mb-16 relative">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          AI-generated content that <span className="text-purple-600">humans love to read.</span>
+          AI-generated content <br></br> that <span  className="text-purple-500 ">humans love to read.</span>
         </h2>
-        {/* Decorative "Check examples" */}
-        <div className="absolute -top-8 right-0 md:top-0 md:left-1/2 lg:left-[60%] transform md:translate-x-1/2 -rotate-6 hidden md:flex items-center text-purple-600 text-lg font-semibold">
-            Check examples
-            <span className="ml-2 -mt-2"><CheckExamplesArrow /></span>
-        </div>
+       
       </div>
 
       {/* Content Layout: Left Column (Cards), Right Column (Scrollable Content) */}
@@ -126,7 +122,7 @@ const AiContentSection = () => {
       <div className="flex flex-col items-center justify-center py-16 md:py-24 px-4 text-center">
       {/* Descriptive Text */}
       <p className="text-lg  italic text-gray-700 mb-8">
-        Check out the Outrank blog where <span className="font-semibold">All Articles are generated with Outrank:</span>
+        Check out the Powerblog blog where <span className="font-semibold">All Articles are generated with Powerblog:</span>
       </p>
 
       {/* Button */}
@@ -144,7 +140,7 @@ const AiContentSection = () => {
       >
         Visit Our Blog
       </a>
-    </div>
+      </div>
     </section>
   );
 };

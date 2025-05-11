@@ -114,8 +114,8 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center">
           <OutrankIcon />
-          <span className="text-lg font-bold text-gray-800">Outrank</span>{" "}
-          {/* Changed back to Outrank as per image */}
+          <span className="text-lg font-bold text-gray-800">Powerblog</span>{" "}
+          {/* Changed to Powerblog */}
         </div>
 
         {/* Navigation Links (Desktop) */}

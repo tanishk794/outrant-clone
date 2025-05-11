@@ -50,11 +50,11 @@ const testimonialsData = [
     id: 1,
     type: 'twitter',
     user: {
-      avatar: '/placeholders/avatar-dennis.jpg', // Replace with actual URL
+      avatar: 'https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/twitter-profile-image%2Fdenniscessan-2741539217?alt=media&token=ef77dd6a-0de6-447c-b194-7f72f4118f29', // Replace with actual URL
       name: 'Dennis Cessan',
       handle: '@denniscessan',
     },
-    text: 'Since October I\'ve used Outrank.so write articles for Checkout Links daily. I\'m bootstrapping so it\'s nice knowing that the blog and SEO are not neglected when I focus on other things. The articles it produces are pretty great and totally in context - check it out!',
+    text: 'Since October I\'ve used Powerblog.so write articles for Checkout Links daily. I\'m bootstrapping so it\'s nice knowing that the blog and SEO are not neglected when I focus on other things. The articles it produces are pretty great and totally in context - check it out!',
     likes: 11,
     date: 'Nov 13, 2024',
   },
@@ -62,22 +62,22 @@ const testimonialsData = [
     id: 2,
     type: 'rating_with_graph',
     company: {
-      logo: '/placeholders/logo-okzest.svg', // Replace with actual URL
+      logo: 'https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/testimonials%2F-OKR0Be-chGIVLOGFa1E%2Favatar?alt=media&token=4947848a-acbd-45c8-9c19-3adb11d7bfba', // Replace with actual URL
       name: 'OKZest',
     },
     rating: 5, // out of 5
     graphImage: 'https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/testimonials%2F46cff328-ae58-4702-ae96-c111ba31337a%2Fattached?alt=media&token=ae03e0c8-22ee-4a44-bf04-f3868a653e21', // Replace with actual URL
-    text: 'I just wanted to say, we have been using Outrank for a few weeks now and the results have been amazing!!! This graph shows the number of impressions we are getting in Google. We had a \'hockey stick\' moment from when we started using Outrank! We are excited to see this growth, I\'m looking forward to...',
+    text: 'I just wanted to say, we have been using Powerblog for a few weeks now and the results have been amazing!!! This graph shows the number of impressions we are getting in Google. We had a \'hockey stick\' moment from when we started using Powerblog! We are excited to see this growth, I\'m looking forward to...',
   },
   {
     id: 3,
     type: 'twitter',
     user: {
-      avatar: '/placeholders/avatar-tona.jpg', // Replace with actual URL
+      avatar: 'https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/twitter-profile-image%2FTonaWrites-1615998963986857985?alt=media&token=44a14e84-8983-4c9f-a4ae-4ad29a9b35d6', // Replace with actual URL
       name: 'Tona',
       handle: '@TonaWrites',
     },
-    text: 'Outrank is one of the best tools I\'ve ever tried. And I love Notion for writing and everything else.',
+    text: 'Powerblog is one of the best tools I\'ve ever tried. And I love Notion for writing and everything else.',
     likes: 1,
     date: 'Nov 26, 2024',
   },
@@ -85,18 +85,18 @@ const testimonialsData = [
     id: 4,
     type: 'rating_only',
     user: {
-      avatar: '/placeholders/avatar-lovis.jpg', // Replace with actual URL
+      avatar: 'https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/testimonials%2Fa8c58957-4a2a-4707-bdfa-5d780ecf5af3%2Favatar?alt=media&token=1ed50d2f-b625-4990-9e58-a5dcd46bb687', // Replace with actual URL
       name: 'Lovis Kauf',
     },
     rating: 5,
-    text: 'I have about 30 posts from Outrank live on my blog. Check the quality for yourself: https://coverd.io/blog/',
+    text: 'I have about 30 posts from Powerblog live on my blog. Check the quality for yourself: https://coverd.io/blog/',
     date: 'Jan 23, 2025',
   },
   {
     id: 5,
     type: 'twitter',
     user: {
-      avatar: '/placeholders/avatar-nabil.jpg', // Replace with actual URL
+      avatar: 'https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/twitter-profile-image%2FnQaze-208012652?alt=media&token=f3fa8498-197c-4a1d-b84f-7039c41592a9', // Replace with actual URL
       name: 'Nabil Kazi',
       handle: '@nQaze',
     },
@@ -109,7 +109,8 @@ const TestimonialCard = ({ testimonial }) => {
   const { type, user, company, text, likes, date, rating, graphImage } = testimonial;
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100 flex flex-col relative overflow-hidden">
+    // Added `break-inside-avoid` to prevent cards from splitting across columns if they're near a column break
+    <div className="bg-white p-6 rounded-lg shadow-lg mt-3 border border-gray-100 flex flex-col h-fit relative overflow-hidden break-inside-avoid">
       {/* Top right "X" icon for Twitter-like cards */}
       {(type === 'twitter') && (
         <div className="absolute top-4 right-4">
@@ -155,13 +156,13 @@ const TestimonialCard = ({ testimonial }) => {
       )}
 
       {/* Testimonial Text */}
-      <p className="text-gray-700 leading-relaxed mb-4 flex-grow">
+      <p className="text-gray-700 leading-relaxed mb-4">
         {text}
       </p>
 
       {/* Likes and Date */}
       {(likes !== undefined || date) && (
-        <div className="flex items-center text-gray-500 text-sm mt-auto">
+        <div className="flex items-center text-gray-500 text-sm">
           {likes !== undefined && (
             <>
               <HeartIcon filled={true} className="mr-1" />
@@ -185,11 +186,10 @@ const TestimonialSection = () => {
         Loved by <span className="text-purple-600">Busy Entrepreneurs!</span>
       </h2>
 
-      {/* Testimonial Grid */}
-      {/* Using Tailwind CSS Grid. Adjust cols and gap as needed for different breakpoints.
-          The masonry-like effect comes from varying content heights in a flex or grid setup,
-          allowing elements to flow naturally. */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 xl:gap-12 auto-rows-min">
+      {/* Testimonial Grid - Changed to CSS Columns for Masonry Effect */}
+      {/* The `columns-*` utility creates a masonry-like layout where items fill columns vertically.
+          `gap-*` will then apply as column-gap (and implicitly, row-gap in this context). */}
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 md:gap-10 xl:gap-12">
         {testimonialsData.map((testimonial) => (
           <TestimonialCard key={testimonial.id} testimonial={testimonial} />
         ))}
