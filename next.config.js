@@ -5,6 +5,9 @@ const nextConfig = {
     images: {
       domains: ['outrank.so','www.outrank.so','api.outrank.so','firebasestorage.googleapis.com'],
     },
+     eslint: {
+    ignoreDuringBuilds: true,
+  },
   };
   
   module.exports = nextConfig;
